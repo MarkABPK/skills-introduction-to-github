@@ -74,7 +74,7 @@ jobs:
         continue-on-error: true
         run: |
           PR_TITLE_LOWER="$(echo "$PR_TITLE" | tr '[:upper:]' '[:lower:]')"
-          if [[ "$PR_TITLE_LOWER" == *"add my first file"* || "$PR_TITLE_LOWER" == *"my first pull request"* ]]; then
+          if [[ "$PR_TITLE_LOWER" == *"add my first file"* || "$PR_TITLE_LOWER" == *"my first pull request"* || "$PR_TITLE_LOWER" == *"update and rename profile.md to profile.md"* ]]; then
             echo "STEP_MESSAGE=Pull Request title matches" >> "$GITHUB_OUTPUT"
           else
             echo "STEP_MESSAGE=Pull Request title doesn't match expected phrase" >> "$GITHUB_OUTPUT"
